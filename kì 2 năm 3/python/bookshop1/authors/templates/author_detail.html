@@ -1,0 +1,35 @@
+{% extends 'baseAuthor.html' %}
+
+{% block content %}
+
+<div class='category-create'>
+  <div class="warning-box">
+    <div class="create-book-header">
+
+      <h1 class="touppercase">{{ author.name }}</h1>
+
+    </div>
+    <div class="padding-20px">
+      <p><strong>Country:</strong> {{ author.country }}</p>
+      <p><strong>Birth Year:</strong> {{ author.birth_year }}</p>
+      <p><strong>Description:</strong> {{ author.description }}</p>
+    </div>
+
+
+
+    <div class="flex-2">
+      <button style="width: 80px;background-color:#28a745 ;" class="handle-book-btn "><a
+        href="{% url 'authors:update' pk=author.pk %}" class="btn btn-secondary">Edit</a></button>
+    <button style="width: 120px;background-color: #6c757d;" class="handle-book-btn "><a
+        href="{% url 'authors:all_authors' %}" class="btn btn-secondary">Back to Authors</a></button>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+</div>
+{% endblock %}

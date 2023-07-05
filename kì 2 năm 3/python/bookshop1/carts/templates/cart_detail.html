@@ -1,0 +1,71 @@
+{% extends 'baseGenre.html' %}
+
+{% block content %}
+<div class='category-create'>
+    <div class="cart-box">
+      <div class="create-book-header">
+  
+        <h1>Your Cart Here</h1>
+    
+      </div>
+      <div>
+        {% if cart_items %}
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th >Quantity</th>
+                    <th>Item Price</th>
+                    <th>Total</th>
+                    <th> </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in cart_items %}
+                    <tr>
+                        <td>{{ item.book.title }}  </td>
+                        <td >
+                            <form style="position: relative;top: 10px;" method="POST" action="{% url 'cart:update_quantity' item.pk %}">
+                                {% csrf_token %}
+                                <input style="width:50px"type="number" name="quantity" min="1" value="{{ item.quantity }}" required>
+                                
+                                <button style="width: 70px;" id="cancel-btn" class ='handle-book-btn ' type="submit">Update</button>
+                            </form>
+                        </td>
+                        <td>{{ item.book.price }}</td>
+                        <td>{{ item.get_item_total }}</td>
+                        <td>
+                            <button id="delete-btn" class ='handle-book-btn ' type="submit"><a href="{% url 'cart:remove_from_cart' item.pk %}">Delete</a></button>
+                            
+                        </td>
+                    </tr>
+                {% endfor %}
+                <tr>
+                    <td colspan="3"></td>
+                    <td style="font-weight: 700;">
+                        Total Price: {{ total_price }}đ
+                    </td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <button id="cancel-btn" class ='handle-book-btn ' type="submit"><a href="{% url 'books:book_list' %}">Go Back</a></button>
+    {% else %}
+        <h3>Giỏ hàng của bạn rỗng.</h3>
+        
+            <button style="width:200px" id="cancel-btn" class ='handle-book-btn create-book-btn ' type="submit"><a href="{% url 'books:book_list' %}">Go Shopping Now!</a></button>
+            
+            
+    {% endif %}
+      </div>
+      {% if cart_items %}
+      <button class ='handle-book-btn create-book-btn' type="submit"><a href="{% url 'orders:create_order' %}">CHECK OUT</a></button>
+          
+      {% endif %}
+
+    </div>
+  </div>
+    
+
+{% endblock %}

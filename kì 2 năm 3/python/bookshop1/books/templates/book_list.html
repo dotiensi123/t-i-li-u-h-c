@@ -1,0 +1,50 @@
+{% extends 'baseBook.html' %}
+
+{% block content %}
+
+
+<div>
+  <button class="handle-book-btn create-book-btn"><a href="{% url 'reviews:top_rated_books' %}"
+      class="btn btn-secondary">TOP RATED <i class="fa-solid fa-explosion"></i></a></button>
+
+  <button style="background-color: #6c757d;" class="handle-book-btn create-book-btn">
+    <a href="/orders/top_selling_books/">Top Selling Books</a>
+  </button>
+</div>
+<div class="book-list">
+  <div class="book-list-title">
+    <h1>Book List</h1>
+  </div>
+  <div>
+    <div class="wrapper">
+      {% for book in books %}
+      <div class="card">
+        <div class="book-image">
+          <a href="{% url 'books:book_detail' book.id %}">
+            <img class="book-item-image" src="{{ book.image.url}}" alt="{{ book.title }}" /></a>
+
+        </div>
+        <div class="book-details">
+          <h5 class="book-title limit-2"><a href="{% url 'books:book_detail' book.id %}">{{ book.title }}</a></h5>
+          <h5>{{ book.price }}đ</h5>
+        </div>
+        <div>
+          <button class="handle-book-btn">
+            <a href="{% url 'cart:add_to_cart' book.id %}">Add to cart </a>
+          </button>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}

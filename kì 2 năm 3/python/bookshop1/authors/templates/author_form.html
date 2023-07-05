@@ -1,0 +1,22 @@
+{% extends 'baseAuthor.html' %}
+
+{% block content %}
+<div class='category-create'>
+  <div class="warning-box">
+    <div class="create-book-header">
+
+      <h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Author</h1>
+  
+    </div>
+    
+    <form id='create-form' method="post" enctype="multipart/form-data">
+    
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input style="width: 130px;background-color:#28a745 ;" class="handle-book-btn " type="submit" class="btn btn-danger" value="Submit">
+        <button style="width: 120px;background-color: #6c757d;" class="handle-book-btn "><a href="{% url 'authors:all_authors' %}" class="btn btn-secondary">Cancel</a></button>
+    </form>
+  </div>
+</div>
+  
+{% endblock %}

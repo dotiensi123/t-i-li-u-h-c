@@ -1,0 +1,17 @@
+{% comment %} {% extends 'baseBook.html' %}
+
+{% block content %}
+    <h1>Kết quả tìm kiếm cho "{{ request.GET.search_term }}"</h1>
+
+    <ul>
+    {% for book in results %}
+        <li><a href="{% url 'books:book_detail' book.pk %}">{{ book.title }}</a> by {{ book.author.name }}</li>
+    {% empty %}
+        <li>Không tìm thấy kết quả nào.</li>
+    {% endfor %}
+    </ul>
+{% endblock %} {% endcomment %}
+
+
+
+<!-- FAIL -->

@@ -1,0 +1,21 @@
++) map(function, iterable)
+example:
+a = [100,-20,-30]
+a = list(map(abs,a))
+a = [100,20,30]
+
+
++) filter(function, iterable):
+
+a = [100,-20,-30]
+a = list(filter(even,a))
+a = [100,-20]
+
+SORT(KEY, REVERSE = )
+KEY + HAMF ĐỂ THỰC HIỆN.
+A  = [1,2,2,3,4,5,6] 
+a.sort(reverse = True)
+a = [6 5 4 3 2 2 1]
+a = [[1,2],[2,3],[1,1][4,1],3,1]]
+a.sort(key = lambda x: (x[0],x[1]))
+a = 

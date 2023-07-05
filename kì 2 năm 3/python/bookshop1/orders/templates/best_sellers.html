@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Best Sellers</title>
+</head>
+<body>
+    <h1>Best Sellers</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="year">Year:</label>
+        <input type="number" name="year" value="{{ request.POST.year }}"><br>
+        <label for="month">Month:</label>
+        <input type="number" name="month" value="{{ request.POST.month }}"><br>
+        <input type="submit" value="Search">
+    </form>
+    {% if best_sellers %}
+    <h2>Top 10 Best Sellers:</h2>
+    <ul>
+    {% for best_seller in best_sellers %}
+        <li>{{ best_seller.book__title }}: {{ best_seller.total_sales }}</li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

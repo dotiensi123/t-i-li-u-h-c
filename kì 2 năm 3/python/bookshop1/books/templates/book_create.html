@@ -1,0 +1,23 @@
+{% extends 'baseBook.html' %}
+
+{% block content %}
+
+<div class='category-create'>
+  <div class="warning-box">
+    <div class="create-book-header">
+
+      <h1>Create Book</h1>
+  
+    </div>
+    
+    <form id='create-form' method="post" enctype="multipart/form-data">
+    
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+      <button class ='handle-book-btn' type="submit">Save</button>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

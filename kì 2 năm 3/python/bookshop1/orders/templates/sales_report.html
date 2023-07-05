@@ -1,0 +1,46 @@
+{% extends 'baseGenre.html' %}
+
+{% block content %}
+
+<div class="category-create">
+  <div class="cart-box">
+    <div class="create-book-header">
+
+      <h1>Sales Report</h1>
+
+    </div>
+    <div class="order-info">
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>Book Title</th>
+            <th>Genre</th>
+            <th>Quantity Sold</th>
+            <th>Price per Book</th>
+            <th>Total Revenue</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for sale in sales %}
+            <tr>
+              <td>{{ sale.title }}</td>
+              <td>{{ sale.genre }}</td>
+              <td>{{ sale.quantity }}</td>
+              <td>{{ sale.price }}</td>
+              <td>{{ sale.total_price }}</td>
+            </tr>
+          {% endfor %}
+          <tr>
+            <td colspan="4"><strong>Total</strong></td>
+            <td><strong>{{ total_sales }}</strong></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>
+
+
+  
+{% endblock %}

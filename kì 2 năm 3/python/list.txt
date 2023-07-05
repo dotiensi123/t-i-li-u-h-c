@@ -1,0 +1,55 @@
+list như mảng 1 chiều và mảng 2 chiều
+list có thể chứa bất kì một giá trị nào có thể.
+list có thể changable:
+hàm của list:
+len(a)
+truy cập thông qua chỉ số. nó hỗ trợ nagative index: 
+câu lệnh for theo dạng chỉ số và for each
+thay đổi giá trị thông qua chỉ số.
+thêm 1 phần tử trong list:
++) append thì thêm vào cuối.
++) insert(index, value)
+xóa 1 phần tử trong đó:
++) pop(index) xóa đi 1 phần tử trong mảng nếu ko index thì là xóa ở cuối.
++) del
+
+remove(): xóa theo giá trị
+remove(value): chỉ xóa đi giá trị đầu tiên.xóa ko có thì nó sẽ là 
+
+sao chep list
+a = [1,2]
+b = a*2  = [1,2,1,2]
+ 
+Tim kiem trong list hay ko:
+x in a: tìm có trong hay ko: o(n)
+
+nối lít với nhau:
+extend: mở rộng nó.
++ thì là cộng
+
+copy() là tạo ra list mới. nhưng ko giống 
+count() đếm số phần tử trong đó.
+index() là trả về chỉ số đầu tiên.
+reverse() đảo ngược 
+sort() là sắp xếp mảng.
+
+
+gắn list với nhau:
+
+
+
+list slicing:
+cú pháp list[start:stop:step] 
+thay đổi giá trị trong 1 đoạn như nào
+chèn 1 số phần tử trong đâu:
+a[1,2,3]
+a[:0]=[1]
+a[1,1,2,3]
+
+hàm lambda:
+lambda x: x*2
+truyền vào giá trị hàm lambda:
+(lambda x: x*2)(10)
+
+nó có các kiểu map và filter
+

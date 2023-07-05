@@ -1,0 +1,31 @@
+{% extends 'baseCart.html' %}
+
+{% block content %}
+
+<div class='category-create'>
+  <div class="warning-box">
+    <div class="create-book-header">
+
+      <h1>{{ book.title }}</h1>
+
+    </div>
+    <div class="padding-20px">
+      <p><strong>Author:</strong> {{ book.author.name }}</p>
+      <p><strong>Genre:</strong> {{ book.genre.name }}</p>
+      <p><strong>Description:</strong></p>
+      <p>{{ book.description }}</p>
+      <p><strong>Price:</strong> {{ book.price }}</p>
+      <p><strong>Stock:</strong> {{ book.stock }}</p>
+    </div>
+    <form id='create-form' method="post" enctype="multipart/form-data">
+
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <button class='handle-book-btn' type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}

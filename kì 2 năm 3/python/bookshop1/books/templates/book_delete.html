@@ -1,0 +1,24 @@
+{% extends 'baseBook.html' %}
+
+{% block content %}
+
+<div class='category-create'>
+  <div class="warning-box">
+    <div class="warning-header">
+      <h1>Delete Book</h1>
+    </div>
+    <div class="padding-50">
+      <h3>Are you sure you want to delete "{{ book.title }}"?</h3>
+    </div>
+    <div>
+      <form id='create-form' method="post">
+        {% csrf_token %}
+        <input style="width: 100px;background-color:#c82333 ;" class="handle-book-btn delete-btn" type="submit" class="btn btn-danger" value="Delete">
+        <button style="width: 100px;background-color: #6c757d;" class="handle-book-btn "><a href="{% url 'books:book_detail' book.id %}" class="btn btn-secondary">Cancel</a></button>
+      </form>
+    </div>
+  </div>
+</div>
+  
+  
+{% endblock %}

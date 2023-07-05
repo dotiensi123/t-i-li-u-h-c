@@ -1,0 +1,21 @@
+{% extends 'baseUser.html' %}
+
+{% block content %}
+<div class='category-create'>
+  <div class="warning-box">
+    <div class="create-book-header">
+
+      <h1 class="touppercase"> <h2>Sign up</h2></h1>
+
+    </div>
+    <div style="width: 70%;" class="order-info">
+      <form id='create-form' method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="handle-book-btn create-book-btn" type="submit">Sign up</button>
+      </form>
+    </div>
+    
+  </div>
+</div>
+{% endblock %}

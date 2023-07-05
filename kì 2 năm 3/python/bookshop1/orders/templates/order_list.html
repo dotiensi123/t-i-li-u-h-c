@@ -1,0 +1,44 @@
+{% extends 'baseGenre.html' %}
+
+{% block content %}
+
+<div class='category-create'>
+  <div class="cart-box">
+    <div class="create-book-header">
+
+      <h1 class="touppercase"><h1>My Orders</h1></h1>
+
+    </div>
+    <div class="order-info">
+      <table id="cart-table" >
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Date Created</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in orders %}
+            <tr>
+              <td>{{ order.id }}</td>
+              <td>{{ order.date_created }}</td>
+              <td>
+                <button id="cancel-btn" style="margin-bottom: 0;" class="handle-book-btn "><a href="{% url 'orders:order_detail' order.pk %}">View Details</a></buttons></td>
+            </tr>
+          {% empty %}
+            <tr>
+              <td colspan="4">You have no orders yet.</td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    
+  </div>
+</div>
+
+
+  
+  
+{% endblock %}

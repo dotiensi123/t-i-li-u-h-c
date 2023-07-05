@@ -1,0 +1,54 @@
+Bài 1: 
+- cài đặt AVG để quét virus
+- cài đặt skybot S&D để 
+- cài đặt Kaspaski: để làm ổ dự trữ.
+Bài 2: hỏi về các câu lệnh thực hiện trong ubuntu
+BÀI 3
+- Dịch vụ Web Server:
+	+) web server hay còn được gọi là cung cấp dữ liệu nội dung dưới dạng hình ảnh văn bản và video. ứng dụng(chương trình duyệt website.
+	+) ta nâng cấp win10 server thành DC rồi từ đó máy kết win10 kết nối với miền và truy cập webserver.
+-	FPT server:
+	+) là nơi lưu trữ các tệp tin và thư mục cho phép người dùng truy cập và tải chúng qua mạng internet
+	+) cổng giao tiếp là 21 vì nó là cổng TCP nó hoạt động với FTP.
+-	Remote server: thì là kết nối với remote kết nối máy chủ và nó chạy
+
+1. kết nối thông qua ftp là cổng bao nhiêu?  cổng 21
+2. Authentication: Anonymous (xác thực : vô danh) - ai cũng vào được
+3. Permissions: Read (Cấp phép : chỉ đọc) - chỉ cho phép đọc, không được sửa xóa
+BÀI 4: 
+- Dịch vụ chia sẻ file Samba 
+- dịch vụ selinux: 
+BÀI 6
+
+1. đọc phần snort trong lý thuyết
+2. Tạo rule cho Snort để phát hiện 3 dạng tấn công Với
+- "any" đầu tiên: bất kì ip nguồn nào
+- "any" thứ hai: bất kì cổng nguồn nòa
+- Count: số lượng sự kiện diễn ra
+- Seconds: thời gian để n(trong count n) sự kiện diễn ra
+3. trong bài snort để làm gì? - Snort phát hiện có các gói Ping gửi đến
+					- Snort phát hiện có các gói tin rà quét trên cổng 80
+					- Snort phát hiện đang bị tấn công TCP SYN Flood
+4. TCP SYN FLOOD là gì? - SYN flood (half-open attack) là một dạng của tấn công từ chối dịch vụ phân tán (DDoS). Là mối đe dọa thường trực đối với hệ thống mạng và máy chủ dịch vụ của các cơ quan và tổ chức. Bằng việc gửi liên tục các packet tin yêu cầu kết nối ban đầu (SYN). Loại tấn công ngày thường gây cạn kiệt tài nguyên hệ thống hoặc ngập lụt đường truyền, làm ngắt quãng quá trình cung cấp dịch vụ cho người dùng hợp pháp, hoặc thậm chí khiến cả hệ thống ngừng hoạt động.
+
+BÀI 7
+1. đọc lý thuyết VPN
+BÀI 8
+1.tcpdump để làm gì? - Sử dụng tcpdump để bắt gói tin mạng
+2. wireshark để làm gì? - Sử dụng được Wireshark để bắt và phân tích gói tin mạng (HTTP/HTTPS/FTP
+/TCP/IP)
+BÀI 9
+1. Bài thực hành này giúp sinh viên nắm được công cụ và cách thức sao lưu hệ thống, bao gồm:
+	Sao lưu tới ổ đĩa mạng
+	Sao lưu tệp lên FTP server
+	Sao lưu tệp sử dụng SCP
+2.đọc lý thuyết
+BÀI 13
+1. đọc lý thuyết truecrypt là chương trình phần mềm dành cho hệ điều hành window nhằm giúp người dung ghi các dữ liệu.
+2. bài này dùng thuật mã hóa nào? - AES
+Bài 15:
+Cài đăt client Server.
+thuật toán bắt dữ liệu.
+Bài 16:
+thuật toán AES và thuật toàn RSA.
+

@@ -1,0 +1,75 @@
+{% extends 'baseBook.html' %}
+
+{% block content %}
+<div class="book-details">
+
+
+  <div class="container-book_detail">
+    <div class="image-book_detail">
+      <img src="{{ book.image.url}}" alt="">
+    </div>
+    <div class="script-book_detail">
+      <div class="script-book_detail-name">
+        <h1 class="touppercase">{{ book.title }}</h1>
+
+      </div>
+      <div class="script-book_detail-author">
+        <p>Author : {{ book.author.name }}</p>
+        <p class="script-book_detail-genre">Genre: <a href="">{{ book.genre.name }}</a></p>
+        <p>Description: {{ book.description }}</p>
+        <br>
+
+      </div>
+      <div class="script-book_detail-price">
+        <p>PRICE: {{ book.price }}đ</p>
+      </div>
+      <div class="script-book_detail-paragraph">
+
+        <p><strong>Stock:</strong> {{ book.stock }}</p>
+        <p> <strong> Rating:</strong> {{avg_rating}} </p>
+        <p>Dang cap nhat thong tin san pham</p>
+        <p>Biet them thong tin lien he HOTLINE: 0123456789</p>
+      </div>
+      <div class="book-btn ">
+        <button class='handle-book-btn create-book-btn' style="width : 200px"><a
+            href="{% url 'cart:add_to_cart' book.id%}">ADD TO
+            CART  <i class="fa-solid fa-cart-plus"></i></a></button>
+      </div>
+      <div>
+        {% if request.user.is_superuser %}
+        <button class='handle-book-btn'>
+          <a href="{% url 'books:book_edit' book.id%}">Edit</a>
+        </button>
+        <button class='handle-book-btn'>
+          <a href="{% url 'books:book_delete' book.id%}">Delete</a>
+        </button>
+        {% endif %}
+      </div>
+    </div>
+
+  </div>
+  <div class="book-review-container">
+    <h2>What Readers Are Saying</h2>
+    {% if reviews %}
+    {% for review in reviews %}
+    <div class="book-review-item">
+      <div class="book-review-user">
+        <h4> Anonymous :</h4>
+      </div>
+      <div class="book-review-content">
+        <p>{{ review.content }}</p>
+        <p>RATING : {{ review.rating }}/5</p>
+      </div>
+
+    </div>
+    {% endfor %}
+    {% else %}
+    <p>No reviews yet.</p>
+    {% endif %}
+    <button class="handle-book-btn create-book-btn">
+      <a href=" {% url 'reviews:create_review' book.pk %}" >Add a review <i class="fa-regular fa-comment"></i> </a>
+    </button>
+    
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends 'baseGenre.html' %}
+
+{% block content %}
+
+<div class='category-create'>
+  <div class="warning-box">
+    <div class="create-book-header">
+
+      <h1>All Genres</h1>
+
+    </div>
+    <div class="genre-container">
+      {% for genre in genres %}
+      <div class="genre-item">
+        <p><a href="{% url 'genres:details' genre.pk %}">
+            <h4 class="limit-2"> {{ genre.name }} </h4>
+          </a></p>
+
+
+      </div>
+
+      {% empty %}
+      <p>No genres yet.</p>
+      {% endfor %}
+    </div>
+    {% if request.user.is_superuser %}
+    <button class="handle-book-btn create-book-btn">
+      <a href="{% url 'genres:create' %}">Create a new genre</a>
+      {% endif %}
+    </button>
+  </div>
+</div>
+</div>
+
+
+
+
+{% endblock %}

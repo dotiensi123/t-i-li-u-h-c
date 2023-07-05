@@ -1,0 +1,52 @@
+{% extends 'baseAuthor.html' %}
+
+{% block content %}
+
+<div class='category-create'>
+  <div class="author-box">
+    <div class="create-book-header">
+
+      <h1>All Authors</h1>
+
+    </div>
+    
+  
+    <div class="wrapper-author">
+        {% for author in authors %}
+        <div class="card">
+          <div class="author-image">
+            <a href="{% url 'authors:book' author.id %}">
+              <img
+              class="book-item-image"
+              src="https://assets.hirecream.com/avatar/user-avatar-placeholder.png"
+              alt=""
+              
+            /></a>
+            
+          </div>
+          <div class="book-details">
+            <h4><a href="https://assets.hirecream.com/avatar/user-avatar-placeholder.png"></a></h4>
+            <h5 class="touppercase limit-2">{{ author.name }}</h5>
+          </div>
+          <div>
+            <button class="handle-book-btn">
+              <a href="{% url 'authors:detail' pk=author.pk %}"> details</a>
+            </button>
+          </div>
+        </div>
+        {% empty %}
+        <p>No author yet.</p>
+        {% endfor %}
+      </div>
+    </div>
+    {% if request.user.is_superuser %}
+    <button class="handle-book-btn create-book-btn">
+      <a href="{% url 'authors:create' %}" class="btn btn-primary">Add Author</a>
+    </button>
+    {% endif %}
+  </div>
+</div>
+
+<div class="book-list"></div>
+
+{% endblock %}
